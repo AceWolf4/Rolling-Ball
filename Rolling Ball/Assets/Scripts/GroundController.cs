@@ -11,7 +11,9 @@ public class GroundController : MonoBehaviour {
         if (other.tag == "Player")
         {
             other.GetComponent<PlayerController>().canJump = true;
+            other.GetComponent<PlayerController>().jumpSuccess = true;
             other.isTrigger = false;
+            
         }
     }
 
