@@ -146,7 +146,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
+  m_BackGroundColor: {r: 0.6242925, g: 0.6415094, b: 0.43876824, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -204,7 +204,7 @@ GameObject:
   - component: {fileID: 1025518891}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -219,7 +219,7 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
+  m_UseAutoMass: 1
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
@@ -282,7 +282,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1025518886}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.84, y: -3.81, z: 0.04207714}
+  m_LocalPosition: {x: -8.84, y: -4, z: 0.04207714}
   m_LocalScale: {x: 0.298, y: 0.298, z: 0.298}
   m_Children: []
   m_Father: {fileID: 0}
@@ -300,6 +300,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  jumpSpeed: 500
+  canJump: 1
 --- !u!58 &1025518891
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -309,12 +311,12 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.26618713, y: 0}
+  m_Offset: {x: -0.26618713, y: -0.02415708}
   serializedVersion: 2
-  m_Radius: 1.590255
+  m_Radius: 1.6144122
 --- !u!1 &1624006613
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,9 +327,10 @@ GameObject:
   - component: {fileID: 1624006615}
   - component: {fileID: 1624006614}
   - component: {fileID: 1624006616}
+  - component: {fileID: 1624006617}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -416,3 +419,14 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.4, y: 1.505846}
   m_EdgeRadius: 0
+--- !u!114 &1624006617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1624006613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1310cfe5d11a5714195b0572e8becb22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
