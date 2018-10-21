@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114597735181289948}
   - component: {fileID: 50109210910485436}
   m_Layer: 0
-  m_Name: Ground (1)
+  m_Name: Ground1
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,6 +57,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4580391298451786}
+  - component: {fileID: 114469362848079146}
   m_Layer: 0
   m_Name: GroundPattern2
   m_TagString: Untagged
@@ -195,6 +196,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.4, y: 1.505846}
   m_EdgeRadius: 0
+--- !u!114 &114469362848079146
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1519019294744416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41ec22dd23546eb498a18e95368cf933, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canTranslate: 0
+  speed: 5
 --- !u!114 &114489919138570164
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -206,6 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1310cfe5d11a5714195b0572e8becb22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!114 &114597735181289948
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -217,6 +232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1310cfe5d11a5714195b0572e8becb22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!212 &212109831907310592
 SpriteRenderer:
   m_ObjectHideFlags: 1

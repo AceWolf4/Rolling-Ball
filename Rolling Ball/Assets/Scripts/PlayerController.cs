@@ -14,7 +14,11 @@ public class PlayerController : MonoBehaviour {
 
     public bool canJump=false;
 
-    public bool jumpSuccess=false;
+    public bool canSpawn=false;
+
+    public Transform previousPattern;
+
+    public Transform currentPattern;
 
     private void Start()
     {
@@ -29,6 +33,7 @@ public class PlayerController : MonoBehaviour {
             GetComponent<Collider2D>().isTrigger = true;
         }
         
+
     }
 
     
@@ -49,4 +54,13 @@ public class PlayerController : MonoBehaviour {
             canJump = false;
         }
     }
+
+    public void patternChanged()
+    {
+        if (previousPattern.name != currentPattern.name)
+        {
+            previousPattern.GetComponent<PatternTranslate>().canTranslate = true;
+        }
+    }
+    
 }

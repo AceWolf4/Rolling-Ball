@@ -16,7 +16,7 @@ public class Spawner : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (player.GetComponent<PlayerController>().jumpSuccess)
+        if (player.GetComponent<PlayerController>().canSpawn)
         {
             int randPattern = Random.Range(0, 2);
             int rand = Random.Range(0, 2);
@@ -53,7 +53,7 @@ public class Spawner : MonoBehaviour {
                     Instantiate(GroundPatternMiddle[rand], transform.position, Quaternion.identity);
                 }
             }
-            player.GetComponent<PlayerController>().jumpSuccess = false;
+            player.GetComponent<PlayerController>().canSpawn = false;
         }
 	}
 }

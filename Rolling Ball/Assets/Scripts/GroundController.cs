@@ -2,19 +2,46 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GroundController : MonoBehaviour {
+public class GroundController : MonoBehaviour
+{
 
+    public GameObject player;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("collision");
         if (other.tag == "Player")
         {
             other.GetComponent<PlayerController>().canJump = true;
-            other.GetComponent<PlayerController>().jumpSuccess = true;
+            if (other.transform.position.y >= 0)
+            {
+                if (name == "Ground1")
+                {
+                    other.GetComponent<PlayerController>().canSpawn = true;
+                }
+                GetComponentInParent<PatternTranslate>().canTranslate = true;
+
+            }
             other.isTrigger = false;
+            other.GetComponent<PlayerController>().currentPattern = GetComponentsInParent<Transform>()[1];
+            other.GetComponent<PlayerController>().patternChanged();
             
         }
     }
 
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (name == "Ground1")
+        {
+            other.GetComponent<PlayerController>().previousPattern = GetComponentsInParent<Transform>()[1];
+        }
+    }
+   
+
 }
+
+    
