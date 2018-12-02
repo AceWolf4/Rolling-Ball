@@ -25,10 +25,13 @@ public class GroundController : MonoBehaviour
                 }
                 GetComponentInParent<PatternTranslate>().canTranslate = true;
 
+                other.GetComponent<PlayerController>().currentPattern = GetComponentsInParent<Transform>()[1];
+                other.GetComponent<PlayerController>().patternChanged();
+
+                player.GetComponent<PlayerController>().score++;
+
             }
             other.isTrigger = false;
-            other.GetComponent<PlayerController>().currentPattern = GetComponentsInParent<Transform>()[1];
-            other.GetComponent<PlayerController>().patternChanged();
             
         }
     }

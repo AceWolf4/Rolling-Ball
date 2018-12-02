@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour {
 
     public Transform currentPattern;
 
+    public int score=0;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -57,7 +59,7 @@ public class PlayerController : MonoBehaviour {
 
     public void patternChanged()
     {
-        if (previousPattern.name != currentPattern.name)
+        if (previousPattern.position.y<currentPattern.position.y)
         {
             previousPattern.GetComponent<PatternTranslate>().canTranslate = true;
         }
